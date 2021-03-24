@@ -11,7 +11,7 @@ const Movies = (props) => {
             <p>{props.movie.duration}</p>
             {props.movie.genre.map((genre, index)=>(
                 <div key={index}>
-                    <a className='genre' href="#" >{genre}</a>
+                    <button className='genre' href="" >{genre}</button>
                     <br/>
                 </div>
             ))}
