@@ -27,9 +27,9 @@ class App extends React.Component {
   }
 
 
-  bestRate(){  
-    thisState({
-      movieList: moviesDb.sort((a,b) => b.rate - a.rate )
+  bestRate(e){  
+    this.setState({
+      movieList: moviesDb.sort((a,b) => b.rate - a.rate)
     })
   }
   
