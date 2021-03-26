@@ -25,12 +25,19 @@ class App extends React.Component {
       })
     }
   }
+
+
+  bestRate(){  
+    thisState({
+      movieList: moviesDb.sort((a,b) => b.rate - a.rate )
+    })
+  }
   
 
   render(){
   return (
     <div>
-      <select onChange={e => this.oderMovies(e)} name="orderMovies" id="orderMovies">
+      <select onChange={e => this.orderMovies(e)} name="orderMovies" id="orderMovies">
         <option value="Decending">Sorty By Year Decending</option>
         <option value="Ascending">Sorty By Year Ascending</option>
       </select>
