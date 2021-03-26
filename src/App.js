@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
 
-  bestRate(e){  
+  bestRate(){  
     this.setState({
       movieList: moviesDb.sort((a,b) => b.rate - a.rate)
     })
@@ -42,9 +42,7 @@ class App extends React.Component {
         <option value="Ascending">Sorty By Year Ascending</option>
       </select>
 
-      <button onChange={e => this.bestRate(e)} name="bestRate" id="bestRate">
-        <option value="bestRate">Best Rate</option>
-      </button>
+      <button onClick={e => this.bestRate(e)} name="bestRate" id="bestRate">Best Rate</button>
 
       <select onChange={e => this.aToZ(e)} name="aToZ" id="aToZ">
         <option value="aToZ">Sorty By A to Z</option>
