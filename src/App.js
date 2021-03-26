@@ -32,6 +32,21 @@ class App extends React.Component {
       movieList: moviesDb.sort((a,b) => b.rate - a.rate)
     })
   }
+
+  aToZ(e){
+    const choice = e.target.value;
+
+    if(choice === 'aToZ'){
+      this.setState({
+        movieList: moviesDb.sort((a,b) =>(a.title).localeCompare(b.title))
+      })
+    }
+    if(choice === 'ZtoA'){
+      this.setState({
+        movieList: moviesDb.sort((a,b)=>(b.title).localeCompare(a.title))
+      })
+    }
+  }
   
 
   render(){
