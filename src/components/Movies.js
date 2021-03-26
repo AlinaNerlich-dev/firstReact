@@ -9,13 +9,14 @@ const Movies = (props) => {
             <p>{props.movie.year}</p>
             <p>{props.movie.director}</p>
             <p>{props.movie.duration}</p>
+            <Rating rating={props.movie.rate} />
             {props.movie.genre.map((genre, index)=>(
                 <div key={index}>
                     <button className='genre' href="" >{genre}</button>
                     <br/>
                 </div>
             ))}
-           <Rating rating={props.movie.rate} />
+           
         </section>
      );
 

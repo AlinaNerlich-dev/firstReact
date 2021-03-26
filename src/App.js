@@ -8,6 +8,7 @@ function App() {
     <div className="Container">
       {moviesDb.map((movie, index) => 
       (<Movies key={index} movie={movie}/>))}
+      
     </div>
   );
 }
