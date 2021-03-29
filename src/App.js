@@ -47,6 +47,15 @@ class App extends React.Component {
       })
     }
   }
+
+  searchMovie(e){
+
+    const title = e.target.value;
+
+    this.setState({
+      movieList: moviesDb.filter(movie => movie.title.includes(title))
+    })
+  }
   
 
   render(){
@@ -59,12 +68,12 @@ class App extends React.Component {
 
       <button onClick={e => this.bestRate(e)} name="bestRate" id="bestRate">Best Rate</button>
 
-      <select onChange={e => this.AtoZ(e)} name="aToZ" id="aToZ">
+      <select onChange={e => this.AtoZ(e)} name="AtoZ" id="AtoZ">
         <option value="aToZ">Sorty By A to Z</option>
         <option value="zToA">Sorty By Z to A</option>
       </select>
 
-      <input type="text" value=""/>
+      <input onInput={e => this.searchMovie(e)} type="text" value="search" placeholder="search"/>
 
       <div className="Container">
         {moviesDb.map((movie, index) => 
