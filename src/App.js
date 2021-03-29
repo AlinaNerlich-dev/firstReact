@@ -33,17 +33,17 @@ class App extends React.Component {
     })
   }
 
-  aToZ(e){
+  AtoZ(e){
     const choice = e.target.value;
 
     if(choice === 'aToZ'){
       this.setState({
-        movieList: moviesDb.sort((a,b) =>(a.title).localeCompare(b.title))
+        movieList: moviesDb.sort((a,b) =>a.title.localeCompare(b.title))
       })
     }
-    if(choice === 'ZtoA'){
+    if(choice === 'zToA'){
       this.setState({
-        movieList: moviesDb.sort((a,b)=>(b.title).localeCompare(a.title))
+        movieList: moviesDb.sort((a,b)=>b.title.localeCompare(a.title))
       })
     }
   }
@@ -59,10 +59,12 @@ class App extends React.Component {
 
       <button onClick={e => this.bestRate(e)} name="bestRate" id="bestRate">Best Rate</button>
 
-      <select onChange={e => this.aToZ(e)} name="aToZ" id="aToZ">
+      <select onChange={e => this.AtoZ(e)} name="aToZ" id="aToZ">
         <option value="aToZ">Sorty By A to Z</option>
         <option value="zToA">Sorty By Z to A</option>
       </select>
+
+      <input type="text" value=""/>
 
       <div className="Container">
         {moviesDb.map((movie, index) => 
